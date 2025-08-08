@@ -1,26 +1,43 @@
 #include <stdio.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
+#include <netinet/in.h>
+
+#define PORT 8080
 
 int main() {
-	int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    int server_fd, client_fd;
+    struct sockaddr_in address;
+    char buffer[1024];
+    size_t addrlen = sizeof(address);
 
-	struct sockaddr_in serv_addr = {0};
-	serv_addr.sin_family = AF_INET;
-	serv_addr.sin_addr.s_addr = INADDR_ANY;
-	serv_addr.sin_port = htons(8000);
+    server_fd = socket(AF_INET, SOCK_STREAM, 0);
 
-	bind(sockfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
-	listen(sockfd, 1);
+    address.sin_family = AF_INET;
+    address.sin_addr.s_addr = INADDR_ANY;
+    address.sin_port = htons(PORT);
 
-	int client_fd = accept(sockfd, NULL, NULL);
-	char msg[] = "hello from server\n";
+    bind(server_fd, (struct sockaddr *)&address, sizeof(address));
+    listen(server_fd, 1);
 
-	write(client_fd, msg, sizeof(msg));
+    printf("Waiting for client...\n");
+    client_fd = accept(server_fd, (struct sockaddr *)&address, &addrlen);
+    printf("Client connected.\n");
 
-	close(client_fd);
-	close(sockfd);
+    while (1) {
+        memset(buffer, 0, sizeof(buffer));
+        int val = recv(client_fd, buffer, sizeof(buffer), 0);
+        if (val <= 0) break;
 
-	return 0;
+        printf("Client: %s", buffer);
+
+        printf("You: ");
+        fgets(buffer, sizeof(buffer), stdin);
+        send(client_fd, buffer, strlen(buffer), 0);
+    }
+
+    close(client_fd);
+    close(server_fd);
+    return 0;
 }
