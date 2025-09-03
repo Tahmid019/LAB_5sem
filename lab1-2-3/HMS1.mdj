@@ -16491,7 +16491,7 @@
 									"font": "Arial;13;1",
 									"parentStyle": true,
 									"left": 816,
-									"top": 157,
+									"top": 149,
 									"width": 264,
 									"height": 13,
 									"text": "Doctor"
@@ -16518,7 +16518,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 821,
-											"top": 180,
+											"top": 172,
 											"width": 254,
 											"height": 13
 										},
@@ -16534,7 +16534,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 821,
-											"top": 195,
+											"top": 187,
 											"width": 254,
 											"height": 13
 										},
@@ -16550,7 +16550,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 821,
-											"top": 210,
+											"top": 202,
 											"width": 254,
 											"height": 13
 										},
@@ -16566,7 +16566,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 821,
-											"top": 225,
+											"top": 217,
 											"width": 254,
 											"height": 13
 										},
@@ -16583,7 +16583,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1445,
-											"top": 272,
+											"top": 256,
 											"width": 254,
 											"height": 13
 										},
@@ -16599,7 +16599,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 821,
-											"top": 240,
+											"top": 232,
 											"width": 254,
 											"height": 13
 										}
@@ -16607,7 +16607,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 816,
-									"top": 175,
+									"top": 167,
 									"width": 264,
 									"height": 83
 								}
@@ -16615,7 +16615,7 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"left": 816,
-							"top": 152,
+							"top": 144,
 							"width": 264,
 							"height": 121,
 							"nameLabel": {
@@ -17934,7 +17934,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 962,
-									"top": 309,
+									"top": 305,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -17952,7 +17952,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 963,
-									"top": 292,
+									"top": 284,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -17988,7 +17988,7 @@
 								"$ref": "AAAAAAGYxYY97xhmcL4="
 							},
 							"lineStyle": 2,
-							"points": "948:273;948:360",
+							"points": "948:265;948:360",
 							"nameLabel": {
 								"$ref": "AAAAAAGYxZrAAymeoxI="
 							},
