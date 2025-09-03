@@ -73,8 +73,8 @@ class Doctor:
 
     def get_app(self):
         """
-        Current Ongoing Appointment
-        :return: Appointment Object
+        Current Ongoing App.
+        :return: App. Object
         """
         return self.app
 
