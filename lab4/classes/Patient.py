@@ -1,3 +1,7 @@
+import time
+from .__init__ import MOD
+
+
 class Patient:
     """
     *Patient Class*
@@ -12,8 +16,8 @@ class Patient:
     - PresID -> INT
     - TestID -> INT
     """
-    def __init__(self, pat_id, name, age, gender, contact_info, address):
-        self.id = pat_id
+    def __init__(self, name, age, gender, contact_info, address):
+        self.id = time.time() % MOD
         self.name = name
         self.age = age
         self.gender = gender
@@ -22,6 +26,10 @@ class Patient:
         self.doc_id = -1
         self.pres_id = -1
         self.test_id = -1
+
+    def get_id(self):
+        """Get Patient ID"""
+        return self.id
 
     def get_details(self):
         """

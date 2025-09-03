@@ -1,7 +1,6 @@
-from Appointment import Appointment
+from .Appointment import Appointment
 import time
-
-MOD = 100
+from .__init__ import MOD
 
 
 class Doctor:
@@ -14,14 +13,18 @@ class Doctor:
     - Schedule -> DATETIME
     - PatientID -> INT
     """
-    def __init__(self, doc_id, name, specialization, schedule):
-        self.id = doc_id
+    def __init__(self, name, specialization, schedule):
+        self.id = time.time() % MOD
         self.name = name
         self.specialization = specialization
         self.schedule = schedule
         self.pat_id = -1
 
         self.app = None
+
+    def get_id(self):
+        """Return Doc ID"""
+        return self.id
 
     def get_details(self):
         """
@@ -42,6 +45,7 @@ class Doctor:
         Get Patient ID
         :return: int->pat_id
         """
+
         print("========== Patients ==========")
         print(f"Patient ID: {self.pat_id}")
         print("--------------------")
