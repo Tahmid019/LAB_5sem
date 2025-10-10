@@ -1,1 +1,2 @@
-Write a Client-Server socket program in C to implement “TCP chat server.” Description: two client systems are connected to one central server for connection establishment. Communication/chat have to be done in client machines.
+Write a Client-Server socket program in C to implement “TCP chat server.” Description: two client systems are connected to one central server for 
+connection establishment. Communication/chat have to be done in client machines.
