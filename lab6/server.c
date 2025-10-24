@@ -25,10 +25,6 @@ int main() {
         error("Socket creation failed");
     }
 
-    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) {
-        error("Setsockopt failed");
-    }
-
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(PORT);
@@ -41,7 +37,7 @@ int main() {
         error("Listen failed");
     }
 
-    printf("FTP Server running on port %d. Waiting for connection...\n", PORT);
+    printf("FTP Server running on port %d. waiting...\n", PORT);
 
     if ((new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen)) < 0) {
         error("Accept failed");
