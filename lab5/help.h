@@ -60,3 +60,8 @@ void executeCommand(char **args) {
         waitpid(pid, &status, 0);
     }
 }
+
+
+f[0] = true
+t = 1
+wait(f[])
