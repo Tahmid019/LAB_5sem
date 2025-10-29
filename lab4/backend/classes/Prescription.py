@@ -1,5 +1,5 @@
 import time
-from .__init__ import MOD
+from __init__ import MOD
 
 
 class Prescription:

@@ -1,4 +1,4 @@
-from .__init__ import MOD
+from __init__ import MOD
 import time
 
 

@@ -1,6 +1,6 @@
-from .Appointment import Appointment
+from Appointment import Appointment
 import time
-from .__init__ import MOD
+from __init__ import MOD
 
 
 class Doctor:
