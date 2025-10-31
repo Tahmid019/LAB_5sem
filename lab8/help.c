@@ -7,3 +7,11 @@
 #define PORT 8080
 #define BUFF 4096
 
+struct Student {
+    int roll;
+    char name[50];
+    char dept[50];
+    float marks;
+};
+
+
