@@ -5,15 +5,33 @@ int main(){
     struct sockaddr_in address;
     int addrlen = sizeof(address);
     char buffer[BUFF];
-    char *hello = 
+
+
+    FILE *fp = fopen("index.html", "r");
+    if(!fp){
+        perror("cannot open index.html");
+        close(newsoc);
+        return -1;
+    }
+
+    fseek(fp, 0, SEEK_END);
+    long fsize = ftell(fp);
+    rewind(fp);
+
+    char *filebuf = malloc(fsize+1);
+    fread(filebuf, 1, fsize, fp);
+    filebuf[fsize] = '\0';
+    fclose(fp);
+
+    char header[256];
+    snprintf(header, sizeof(header), 
         "HTTP/1.1 200 OK\r\n"
         "Content-Type: text/html\r\n"
+        "Content-Length: %ld\r\n"
         "Connection: close\r\n"
-        "\r\n"
-        "<html><head><title>Web Server</title></head>"
-        "<body><h1>Welcome</h1>"
-        "<p>Testing Page.</p>"
-        "</body></html>";
+        "\r\n",
+        fsize
+    );
     
     if((server = socket(AF_INET, SOCK_STREAM, 0)) == 0){
         perror("Sock Failed");
@@ -50,8 +68,10 @@ int main(){
         read(newsoc, buffer, BUFF-1);
         printf("Recv requ: %s\n", buffer);
 
-        write(newsoc, hello, strlen(hello));
+        write(newsoc, header, strlen(header));
+        write(newsoc, filebuf, fsize);
 
+        free(filebuf);
         close(newsoc);
     }
 
