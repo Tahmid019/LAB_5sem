@@ -49,7 +49,7 @@ INSERT INTO Event (event_name, category) VALUES
 
 INSERT INTO Venue (venue_name, capacity) VALUES
 ('Auditorium', 200),
-('Seminar Hall', 80),
+('S+l', 80),
 ('Playground', 500),
 ('Lab 1', 40);
 
